@@ -180,7 +180,11 @@ p {
 Section
 =========
 */
-
+@media screen and (max-width: 768px) {
+  .cards-center {
+    max-width: 350px;
+  }
+}
 .cards {
   background-color: var(--clr-grey-10);
 }
@@ -188,9 +192,12 @@ Section
   background-color: var(--clr-white);
   box-shadow: var(--light-shadow);
   transition: var(--transition);
+  margin-bottom: 2rem;
+  height: 25rem;
 }
 .card:hover {
   box-shadow: var(--dark-shadow);
+  height: auto;
 }
 .img-container {
   /* width: 25rem; */
@@ -201,7 +208,6 @@ Section
   opacity: 0.5;
 }
 .img-container img {
-  /* height: 10rem; */
   height: 25rem;
   object-fit: cover;
   transition: var(--transition);
@@ -268,4 +274,21 @@ Section
 }
 .info-hower:hover .hide-info {
   height: 100px;
+}
+@media screen and (min-width: 768px) {
+  .cards-center {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 1.5rem;
+  }
+}
+@media screen and (min-width: 992px) {
+  .cards-center {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+@media screen and (min-width: 1440px) {
+  .cards-center {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
 }
