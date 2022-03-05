@@ -1,4 +1,5 @@
 import get from "./getElement.js";
+import showItems from "./showItems.js";
 
 // buttonsContainer
 const buttonsContainer = get(".buttons-container");
