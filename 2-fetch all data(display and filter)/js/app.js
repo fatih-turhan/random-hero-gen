@@ -122,6 +122,22 @@ const showItems = async () => {
   useItems(data);
 };
 
+const btns = document.querySelectorAll(".btn");
+
+console.log(btns);
+btns.forEach((btn) => {
+  btn.addEventListener("click", async (e) => {
+    const selected = e.currentTarget.dataset.id;
+    const data = await fetchData();
+    const filtredData = data.filter((item) => {
+      if (item.gender === selected) {
+        return item;
+      }
+    });
+    useItems(filtredData);
+  });
+});
+
 window.addEventListener("DOMContentLoaded", () => {
   showItems();
 });
