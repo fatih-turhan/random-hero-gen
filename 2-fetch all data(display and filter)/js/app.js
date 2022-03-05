@@ -122,22 +122,46 @@ const showItems = async () => {
   useItems(data);
 };
 
-const btns = document.querySelectorAll(".btn");
+const buttonsContainer = document.querySelector(".buttons-container");
 
-console.log(btns);
-btns.forEach((btn) => {
-  btn.addEventListener("click", async (e) => {
-    const selected = e.currentTarget.dataset.id;
-    const data = await fetchData();
-    const filtredData = data.filter((item) => {
-      if (item.gender === selected) {
-        return item;
+window.addEventListener("DOMContentLoaded", async () => {
+  // get return
+  const data = await fetchData();
+  // showItems when loads
+  showItems();
+  // get specific button categories
+  const btnCategories = data.reduce(
+    (total, item) => {
+      if (!total.includes(item.gender)) {
+        total.push(item.gender);
+      }
+      return total;
+    },
+    ["all"]
+  );
+  // show all buttons
+  const showButtons = btnCategories
+    .map((item) => {
+      return `<button class="btn" data-id="${item}">${item}</button>`;
+    })
+    .join("");
+  buttonsContainer.innerHTML = showButtons;
+  // filter from dynamic buttons
+  const btns = document.querySelectorAll(".btn");
+  btns.forEach((btn) => {
+    btn.addEventListener("click", async (e) => {
+      const selected = e.currentTarget.dataset.id;
+      const data = await fetchData();
+      const filtredData = data.filter((item) => {
+        if (item.gender === selected) {
+          return item;
+        }
+      });
+      if (selected === "all") {
+        useItems(data);
+      } else {
+        useItems(filtredData);
       }
     });
-    useItems(filtredData);
   });
-});
-
-window.addEventListener("DOMContentLoaded", () => {
-  showItems();
 });
