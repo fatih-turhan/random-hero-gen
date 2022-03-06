@@ -1,5 +1,4 @@
 // *********** FETCH DATA *************
-import get from "../modules/getElement.js";
 import fetchData from "../modules/fetchData.js";
 import showItems from "../modules/showItems.js";
 import showFilterButtons from "../modules/showFilterButtons.js";
@@ -10,10 +9,9 @@ window.addEventListener("DOMContentLoaded", async () => {
   const data = await fetchData();
   // showItems when loads
   showItems(data);
+  // show random
+  showRandomBtn(data);
   // filter by categories
   showFilterButtons(data, "gender");
   showFilterButtons(data, "alignment");
-  // show random
-  showRandomBtn(data);
-  console.log(data);
 });

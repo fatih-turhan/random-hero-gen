@@ -5,12 +5,12 @@ import showItems from "./showItems.js";
 const buttonsContainer = get(".buttons-container");
 
 const showFilterButtons = (dataInput, cat) => {
+  // inputs
   const category = cat;
   const data = dataInput;
 
   // create title
   const title = document.createElement("h3");
-
   title.textContent = `filter by ${category}`;
   title.classList.add("filter-title");
   buttonsContainer.appendChild(title);
@@ -25,27 +25,18 @@ const showFilterButtons = (dataInput, cat) => {
     },
     ["all"]
   );
+
   // show all buttons
   const showButtons = btnCategories
     .map((item) => {
       return `<button class="btn ${category}" data-id="${item}">${item}</button>`;
     })
     .join("");
+  // add buttons to html
   const buttonContChild = document.createElement("div");
   buttonContChild.classList.add("buttonContChild");
   buttonContChild.innerHTML = showButtons;
   buttonsContainer.appendChild(buttonContChild);
-
-  // add active to buttons
-  const allBtns = document.querySelectorAll(".btn");
-  allBtns.forEach((btn) => {
-    btn.addEventListener("click", () => {
-      // remove active from all
-      allBtns.forEach((btn) => btn.classList.remove("btn-active"));
-      // add active the clicked one
-      btn.classList.add("btn-active");
-    });
-  });
 
   // filter from dynamic buttons
   const buttonCategory = `.${category}`;
@@ -63,6 +54,17 @@ const showFilterButtons = (dataInput, cat) => {
       } else {
         showItems(filtredData);
       }
+    });
+  });
+
+  // add active to buttons
+  const allBtns = document.querySelectorAll(".btn");
+  allBtns.forEach((btn) => {
+    btn.addEventListener("click", () => {
+      // remove active from all
+      allBtns.forEach((btn) => btn.classList.remove("btn-active"));
+      // add active the clicked one
+      btn.classList.add("btn-active");
     });
   });
 };
