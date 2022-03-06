@@ -199,6 +199,10 @@ Section
 .buttons-container {
   margin-bottom: 4rem;
 }
+.btn-active {
+  color: var(--clr-primary-1);
+  background: var(--clr-primary-8);
+}
 .cards {
   background-color: var(--clr-grey-10);
 }

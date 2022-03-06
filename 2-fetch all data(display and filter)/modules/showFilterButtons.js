@@ -36,11 +36,20 @@ const showFilterButtons = (dataInput, cat) => {
   buttonContChild.innerHTML = showButtons;
   buttonsContainer.appendChild(buttonContChild);
 
-  // filter from dynamic buttons
+  // add active to buttons
+  const allBtns = document.querySelectorAll(".btn");
+  allBtns.forEach((btn) => {
+    btn.addEventListener("click", () => {
+      // remove active from all
+      allBtns.forEach((btn) => btn.classList.remove("btn-active"));
+      // add active the clicked one
+      btn.classList.add("btn-active");
+    });
+  });
 
+  // filter from dynamic buttons
   const buttonCategory = `.${category}`;
   const btns = document.querySelectorAll(buttonCategory);
-  console.log(btns);
   btns.forEach((btn) => {
     btn.addEventListener("click", async (e) => {
       const selected = e.currentTarget.dataset.id;
