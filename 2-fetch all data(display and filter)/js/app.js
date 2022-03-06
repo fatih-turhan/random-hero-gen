@@ -9,6 +9,7 @@ window.addEventListener("DOMContentLoaded", async () => {
   const data = await fetchData();
   // showItems when loads
   showItems(data);
-  // filter buttons
-  showFilterButtons(data);
+  // filter by categories
+  showFilterButtons(data, "gender");
+  showFilterButtons(data, "alignment");
 });

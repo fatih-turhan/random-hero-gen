@@ -4,13 +4,22 @@ import showItems from "./showItems.js";
 // buttonsContainer
 const buttonsContainer = get(".buttons-container");
 
-const showFilterButtons = (dataInput) => {
+const showFilterButtons = (dataInput, cat) => {
+  const category = cat;
   const data = dataInput;
+
+  // create title
+  const title = document.createElement("h3");
+
+  title.textContent = `filter by ${category}`;
+  title.classList.add("filter-title");
+  buttonsContainer.appendChild(title);
+
   // get specific button categories
   const btnCategories = data.reduce(
     (total, item) => {
-      if (!total.includes(item.gender)) {
-        total.push(item.gender);
+      if (!total.includes(item[category])) {
+        total.push(item[category]);
       }
       return total;
     },
@@ -19,17 +28,24 @@ const showFilterButtons = (dataInput) => {
   // show all buttons
   const showButtons = btnCategories
     .map((item) => {
-      return `<button class="btn" data-id="${item}">${item}</button>`;
+      return `<button class="btn ${category}" data-id="${item}">${item}</button>`;
     })
     .join("");
-  buttonsContainer.innerHTML = showButtons;
+  const buttonContChild = document.createElement("div");
+  buttonContChild.classList.add("buttonContChild");
+  buttonContChild.innerHTML = showButtons;
+  buttonsContainer.appendChild(buttonContChild);
+
   // filter from dynamic buttons
-  const btns = document.querySelectorAll(".btn");
+
+  const buttonCategory = `.${category}`;
+  const btns = document.querySelectorAll(buttonCategory);
+  console.log(btns);
   btns.forEach((btn) => {
     btn.addEventListener("click", async (e) => {
       const selected = e.currentTarget.dataset.id;
       const filtredData = data.filter((item) => {
-        if (item.gender === selected) {
+        if (item[category] === selected) {
           return item;
         }
       });

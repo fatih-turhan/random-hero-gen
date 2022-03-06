@@ -172,7 +172,7 @@ p {
   margin-right: auto;
 }
 .section-title {
-  margin-bottom: 4rem;
+  margin-bottom: 3rem;
   text-align: center;
 }
 /* 
@@ -184,6 +184,20 @@ Section
   .cards-center {
     max-width: 350px;
   }
+}
+.filter-title {
+  text-align: center;
+}
+.buttonContChild {
+  margin-bottom: 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  column-gap: 0.2rem;
+  row-gap: 1rem;
+}
+.buttons-container {
+  margin-bottom: 4rem;
 }
 .cards {
   background-color: var(--clr-grey-10);
