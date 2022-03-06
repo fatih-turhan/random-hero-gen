@@ -6,8 +6,11 @@ const fetchData = async () => {
   // fetch data
   const resp = await fetch(url);
   const data = await resp.json();
+  // create id
+  let id = 0;
   // filter data
   const datas = data.map((item) => {
+    id++;
     const { name } = item;
     const {
       intelligence: int,
@@ -21,6 +24,7 @@ const fetchData = async () => {
     const { fullName: realName, alignment } = item.biography;
     const { md: img } = item.images;
     return {
+      id,
       name,
       int,
       str,

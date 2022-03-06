@@ -225,7 +225,7 @@ Section
 .card:hover .img {
   opacity: 0.5;
 }
-.img-container img {
+.img {
   height: 25rem;
   object-fit: cover;
   transition: var(--transition);
@@ -296,11 +296,12 @@ Section
 @media screen and (min-width: 768px) {
   .cards-center {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    /* grid-template-columns: 1fr 1fr; */
     column-gap: 1.5rem;
+    grid-template-columns: repeat(auto-fit, minmax(330px, 1fr));
   }
 }
-@media screen and (min-width: 992px) {
+/* @media screen and (min-width: 992px) {
   .cards-center {
     grid-template-columns: 1fr 1fr 1fr;
   }
@@ -309,4 +310,10 @@ Section
   .cards-center {
     grid-template-columns: 1fr 1fr 1fr 1fr;
   }
+} */
+/* creteate random */
+.random-card {
+  width: 20rem;
+  margin: 0 auto;
+  /* height: 30rem; */
 }
