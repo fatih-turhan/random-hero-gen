@@ -1,5 +1,6 @@
 import get from "./getElement.js";
 import showItems from "./showItems.js";
+import { showLoading, hideLoading } from "./toggleLoading.js";
 
 // buttonsContainer
 const buttonsContainer = get(".buttons-container");
@@ -37,7 +38,6 @@ const showFilterButtons = (dataInput, cat) => {
   buttonContChild.classList.add("buttonContChild");
   buttonContChild.innerHTML = showButtons;
   buttonsContainer.appendChild(buttonContChild);
-
   // filter from dynamic buttons
   const buttonCategory = `.${category}`;
   const btns = document.querySelectorAll(buttonCategory);

@@ -180,6 +180,27 @@ p {
 Section
 =========
 */
+/* loading */
+.loading {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: grid;
+  place-items: center;
+  z-index: 999;
+  /* margin-top: 5rem; */
+  opacity: 0.5;
+  background-color: var(--clr-grey-10);
+}
+.loading img {
+  width: 15rem;
+  border-radius: 50%;
+}
+.hide-loading {
+  display: none;
+}
 @media screen and (max-width: 768px) {
   .cards-center {
     max-width: 350px;

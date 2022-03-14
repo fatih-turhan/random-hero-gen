@@ -1,4 +1,5 @@
 import get from "./getElement.js";
+import { hideLoading } from "./toggleLoading.js";
 
 const showItems = (arr) => {
   const container = get(".cards-center");
@@ -70,6 +71,8 @@ const showItems = (arr) => {
     })
     .join("");
   container.innerHTML = items;
+  // hide loading
+  hideLoading();
 };
 
 export default showItems;
