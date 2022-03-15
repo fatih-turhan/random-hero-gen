@@ -9,16 +9,24 @@ const giveData = async () => {
     id++;
     const { name } = item;
     const {
-      intelligence: int,
-      strength: str,
-      speed,
-      durability: dur,
-      power,
-      combat,
-    } = item.powerstats;
-    const { gender, race, height, weight, eyeColor, hairColor } = item.appearance;
-    const { fullName: realName, alignment } = item.biography;
-    const { md: img } = item.images;
+      powerstats: {
+        intelligence: int,
+        strength: str,
+        speed,
+        durability: dur,
+        power,
+        combat,
+      },
+    } = item;
+    const {
+      appearance: { gender, race, height, weight, eyeColor, hairColor },
+    } = item;
+    const {
+      biography: { fullName: realName, alignment },
+    } = item;
+    const {
+      images: { md: img },
+    } = item;
     return {
       id,
       name,
