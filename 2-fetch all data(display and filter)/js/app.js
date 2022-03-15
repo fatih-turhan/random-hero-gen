@@ -1,12 +1,12 @@
 // *********** FETCH DATA *************
-import fetchData from "../modules/fetchData.js";
+import giveData from "../modules/giveData.js";
 import showItems from "../modules/showItems.js";
 import showFilterButtons from "../modules/showFilterButtons.js";
 import showRandomBtn from "../modules/showRandomBtn.js";
 
 window.addEventListener("DOMContentLoaded", async () => {
   // get return
-  const data = await fetchData();
+  const data = await giveData();
   // showItems when loads
   showItems(data);
   // show random

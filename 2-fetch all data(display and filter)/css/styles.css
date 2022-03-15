@@ -194,7 +194,7 @@ Section
   background-color: var(--clr-grey-10);
 }
 .loading img {
-  /* width: 15rem; */
+  width: 25rem;
   border-radius: 50%;
 }
 
