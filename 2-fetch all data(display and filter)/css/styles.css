@@ -185,25 +185,25 @@ Section
   height: 100%;
   width: 100%;
   position: absolute;
-  top: 0;
+  top: 0%;
   left: 0;
   display: grid;
   place-items: center;
   z-index: 999;
-  /* margin-top: 5rem; */
-  opacity: 0.5;
+  /* opacity: 0.8; */
   background-color: var(--clr-grey-10);
 }
 .loading img {
-  width: 15rem;
+  /* width: 15rem; */
   border-radius: 50%;
 }
+
 .hide-loading {
   display: none;
 }
 @media screen and (max-width: 768px) {
   .cards-center {
-    max-width: 350px;
+    max-width: 360px;
   }
 }
 .filter-title {
@@ -266,7 +266,7 @@ Section
   opacity: 1;
 }
 .info {
-  /* padding: 2rem 0; */
+  padding: 0 0.75rem;
   text-align: center;
   height: 0;
   overflow: hidden;
@@ -312,7 +312,9 @@ Section
   transition: var(--transition);
 }
 .info-hower:hover .hide-info {
-  height: 100px;
+  height: 120px;
+  /* height: auto;
+  padding: 0.2rem 0; */
 }
 @media screen and (min-width: 768px) {
   .cards-center {

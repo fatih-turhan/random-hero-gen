@@ -1,6 +1,5 @@
 import get from "./getElement.js";
 import showItems from "./showItems.js";
-import { showLoading, hideLoading } from "./toggleLoading.js";
 
 // buttonsContainer
 const buttonsContainer = get(".buttons-container");
