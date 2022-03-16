@@ -4,6 +4,7 @@ import showItems from "../modules/showItems.js";
 import showFilterButtons from "../modules/showFilterButtons.js";
 import showRandomBtn from "../modules/showRandomBtn.js";
 import "../modules/getID.js";
+import "../modules/filterAll.js";
 
 window.addEventListener("DOMContentLoaded", async () => {
   // get return

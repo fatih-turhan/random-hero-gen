@@ -1,8 +1,23 @@
 import get from "./getElement.js";
 import { hideLoading } from "./toggleLoading.js";
+// import get from "./getElement.js";
+
+const container = get(".cards-center");
+const result = get(".result-text");
+const buttonsContainer = get(".buttons-container");
 
 const showItems = (arr) => {
-  const container = get(".cards-center");
+  // if search gives no item
+  if (arr.length === 0) {
+    result.textContent = `there is no item matched`;
+    buttonsContainer.style.display = "none";
+    container.innerHTML = null;
+    hideLoading();
+  } else {
+    result.textContent = "";
+    buttonsContainer.style.display = "block";
+  }
+
   const items = arr
     .map((item) => {
       const {

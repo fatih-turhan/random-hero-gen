@@ -62,7 +62,7 @@ Global Styles
 }
 body {
   font-family: var(--ff-primary);
-  background: var(--clr-white);
+  background: var(--clr-grey-10);
   color: var(--clr-grey-1);
   line-height: 1.5;
   font-size: 0.875rem;
@@ -175,17 +175,16 @@ p {
   margin-bottom: 3rem;
   text-align: center;
 }
-/* 
-=========
-Section
-=========
-*/
-/* loading */
+/*
+========
+Loading 
+========
+ */
 .loading {
   height: 100%;
   width: 100%;
   position: absolute;
-  top: 0%;
+  top: 0;
   left: 0;
   display: grid;
   place-items: center;
@@ -197,14 +196,42 @@ Section
   width: 25rem;
   border-radius: 50%;
 }
-
 .hide-loading {
   display: none;
 }
+
+/* 
+=========
+Section
+=========
+*/
+
 @media screen and (max-width: 768px) {
   .cards-center {
     max-width: 360px;
   }
+}
+/* form */
+.input {
+  width: 90vw;
+  max-width: 300px;
+  display: block;
+  margin: 0 auto;
+  padding: 0.5rem 1rem;
+  border: none;
+  background-color: var(--clr-white);
+  font-size: 1.3rem;
+  text-transform: capitalize;
+  box-shadow: var(--dark-shadow);
+  margin-bottom: 1rem;
+}
+.input::placeholder {
+  text-align: center;
+  color: var(--clr-grey-2);
+}
+.result-text {
+  text-align: center;
+  margin-top: 2rem;
 }
 .filter-title {
   text-align: center;
@@ -219,6 +246,7 @@ Section
 }
 .buttons-container {
   margin-bottom: 4rem;
+  margin-top: 2rem;
 }
 .btn-active {
   color: var(--clr-primary-1);
@@ -320,7 +348,7 @@ Section
   .cards-center {
     display: grid;
     column-gap: 1.5rem;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
   }
 }
 /* random card */
