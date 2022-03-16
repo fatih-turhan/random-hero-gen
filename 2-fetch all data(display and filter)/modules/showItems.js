@@ -6,6 +6,7 @@ const showItems = (arr) => {
   const items = arr
     .map((item) => {
       const {
+        id,
         img,
         name,
         realName,
@@ -25,18 +26,20 @@ const showItems = (arr) => {
       } = item;
 
       return `    <!-- single card -->
-        <article class="card">
+        <article class="card" data-id="${id}">
           <!-- img -->
-          <div class="img-container">
-            <img
-              class="img"
-              src="${img}"
-              alt=""
-            />
-            <!-- title -->
-            <h2 class="title">${name}</h2>
-            <!-- name -->
-          </div>
+          <a href="singleItem.html">
+            <div class="img-container">
+              <img
+                class="img"
+                src="${img}"
+                alt=""
+              />
+              <!-- title -->
+              <h2 class="title">${name}</h2>
+              <!-- name -->
+            </div>
+          </a>
           <!-- info -->
           <div class="info">
             <div class="info-grid">

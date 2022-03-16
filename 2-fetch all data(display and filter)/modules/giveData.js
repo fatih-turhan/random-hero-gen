@@ -22,12 +22,21 @@ const giveData = async () => {
       appearance: { gender, race, height, weight, eyeColor, hairColor },
     } = item;
     const {
-      biography: { fullName: realName, alignment },
+      biography: {
+        fullName: realName,
+        alignment,
+        placeOfBirth: birth,
+        publisher,
+        firstAppearance: firstAp,
+      },
     } = item;
     const {
       images: { md: img },
     } = item;
     return {
+      birth,
+      publisher,
+      firstAp,
       id,
       name,
       int,
