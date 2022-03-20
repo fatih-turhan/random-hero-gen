@@ -487,6 +487,6 @@ Page Buttons
   transition: var(--transition);
 }
 .page-btn:hover,
-.active-btn {
+.active-page-btn {
   color: var(--clr-primary-2);
 }
