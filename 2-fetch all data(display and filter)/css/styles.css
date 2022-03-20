@@ -183,7 +183,7 @@ Loading
 .loading {
   height: 100%;
   width: 100%;
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   display: grid;
@@ -449,4 +449,44 @@ SINGLE ITEMS
 }
 .color-green {
   color: green;
+}
+/* 
+=======
+Page Buttons 
+=======
+*/
+.pages-buttons-container {
+  margin-top: 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  column-gap: 0.3rem;
+}
+.prev-btn,
+.next-btn {
+  cursor: pointer;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  border-bottom: 0.1rem solid transparent;
+  transition: var(--transition);
+}
+.prev-btn:hover,
+.next-btn:hover {
+  border-bottom: 0.1rem solid var(--clr-grey-1);
+}
+.page-btn {
+  cursor: pointer;
+  background: none;
+  border: none;
+  font-size: 1.2rem;
+  background-color: var(--clr-primary-6);
+  padding: 0.1rem 0.5rem;
+  color: var(--clr-white);
+  transition: var(--transition);
+}
+.page-btn:hover,
+.active-btn {
+  color: var(--clr-primary-2);
 }

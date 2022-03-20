@@ -39,6 +39,8 @@ const showSingleItem = async (getID) => {
     },
   ] = singleItem;
 
+  document.title = name;
+
   title.innerHTML = `  <h3 class="singles-name">Name:${name}</h3>
     <h3 class="singles-align">
     <span class="result-icon">
