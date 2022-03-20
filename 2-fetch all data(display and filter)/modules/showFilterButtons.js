@@ -1,5 +1,8 @@
 import get from "./getElement.js";
 import showItems from "./showItems.js";
+import paginate from "./paginate.js";
+import showPages from "./showPages.js";
+import pageBtnFunct from "./pageBtnFunc.js";
 
 // buttonsContainer
 const buttonsContainer = get(".buttons-container");
@@ -50,9 +53,15 @@ const showFilterButtons = (dataInput, cat) => {
         }
       });
       if (selected === "all") {
-        showItems(data);
+        const pages = paginate(data);
+        showPages(pages, 0);
+        pageBtnFunct(pages);
+        // showItems(data);
       } else {
-        showItems(filtredData);
+        const filtredPages = paginate(filtredData);
+        showPages(filtredPages, 0);
+        pageBtnFunct(filtredPages);
+        // showItems(filtredData);
       }
     });
   });

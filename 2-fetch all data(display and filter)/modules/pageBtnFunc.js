@@ -1,9 +1,16 @@
-// import get from "./getElement.js";
+import showPages from "./showPages.js";
 
-// const container = get(".pages-buttons-container");
+const pageBtnFunct = (pages) => {
+  const container = document.querySelector(".pages-buttons-container");
 
-// let index = 0;
+  container.addEventListener("click", (e) => {
+    if (e.target.classList.contains(".pages-buttons-container")) return;
+    if (e.target.classList.contains("page-btn")) {
+      const index = parseInt(e.target.dataset.index);
+      console.log(index);
+      showPages(pages, index);
+    }
+  });
+};
 
-// container.addEventListener("click", (e) => {
-//     if(e)
-// });
+export default pageBtnFunct;
