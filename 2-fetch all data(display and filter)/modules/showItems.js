@@ -107,7 +107,21 @@ const showItems = (arr) => {
         <!-- end of single card -->`;
     })
     .join("");
+
   container.innerHTML = items;
+  // if list has one item center that card
+  if (arr.length === 1) {
+    const someItem = get(".card");
+    container.style.display = "block";
+    someItem.classList.add("random-card");
+  }
+
+  if (arr.length > 1) {
+    const someItem = get(".card");
+    container.style.display = "grid";
+    someItem.classList.remove("random-card");
+  }
+
   // hide loading
   hideLoading();
 };

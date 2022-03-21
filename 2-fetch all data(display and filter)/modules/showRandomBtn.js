@@ -1,6 +1,9 @@
 import showItems from "./showItems.js";
 import get from "./getElement.js";
 import randomNumb from "./randomNumb.js";
+import showPagesBtns from "./showPageBtns.js";
+import showPages from "./showPages.js";
+import paginate from "./paginate.js";
 
 const showRandomBtn = (data) => {
   // create title
@@ -21,21 +24,24 @@ const showRandomBtn = (data) => {
         return item;
       }
     });
-    showItems(randomHero);
+    const newPages = paginate(randomHero);
+    showPages(newPages, 0);
+    // showItems(randomHero);
+    // showPagesBtns(newPages);
   });
 
   // add class to random card
-  const btns = document.querySelectorAll(".btn");
-  btns.forEach((btn) => {
-    btn.addEventListener("click", (e) => {
-      const selected = e.currentTarget;
-      const card = get(".card");
-      console.log(selected);
-      if (selected.classList.contains("random-btn")) {
-        card.classList.add("random-card");
-      }
-    });
-  });
+  // const btns = document.querySelectorAll(".btn");
+  // btns.forEach((btn) => {
+  //   btn.addEventListener("click", (e) => {
+  //     const selected = e.currentTarget;
+  //     const card = get(".card");
+  //     console.log(selected);
+  //     if (selected.classList.contains("random-btn")) {
+  //       card.classList.add("random-card");
+  //     }
+  //   });
+  // });
 };
 
 export default showRandomBtn;

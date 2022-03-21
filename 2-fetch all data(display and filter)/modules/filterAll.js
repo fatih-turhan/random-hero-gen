@@ -8,6 +8,7 @@ import pageBtnFunct from "./pageBtnFunc.js";
 
 const form = get(".form");
 const input = get(".input");
+const btnsContainer = get(".pages-buttons-container");
 
 form.addEventListener("keyup", async () => {
   showLoading();
@@ -20,8 +21,13 @@ form.addEventListener("keyup", async () => {
 
   const pages = paginate(filtredData);
 
-  showPages(pages, 0);
-  pageBtnFunct(pages);
+  if (pages.length === 0) {
+    showItems(filtredData);
+    btnsContainer.style.display = "none";
+  } else {
+    showPages(pages, 0);
+    pageBtnFunct(pages);
+  }
 
   // remove active from all buttons
   const allBtns = document.querySelectorAll(".btn");

@@ -66,10 +66,13 @@ const showFilterButtons = (dataInput, cat) => {
     });
   });
 
+  const input = get(".input");
+
   // add active to buttons
   const allBtns = document.querySelectorAll(".btn");
   allBtns.forEach((btn) => {
     btn.addEventListener("click", () => {
+      input.value = "";
       // remove active from all
       allBtns.forEach((btn) => btn.classList.remove("btn-active"));
       // add active the clicked one
