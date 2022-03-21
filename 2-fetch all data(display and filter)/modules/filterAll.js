@@ -2,6 +2,9 @@ import get from "./getElement.js";
 import showItems from "./showItems.js";
 import giveData from "./giveData.js";
 import { showLoading } from "./toggleLoading.js";
+import paginate from "./paginate.js";
+import showPages from "./showPages.js";
+import pageBtnFunct from "./pageBtnFunc.js";
 
 const form = get(".form");
 const input = get(".input");
@@ -15,7 +18,10 @@ form.addEventListener("keyup", async () => {
     return item.name.toLowerCase().includes(inputValue);
   });
 
-  showItems(filtredData);
+  const pages = paginate(filtredData);
+
+  showPages(pages, 0);
+  pageBtnFunct(pages);
 
   // remove active from all buttons
   const allBtns = document.querySelectorAll(".btn");

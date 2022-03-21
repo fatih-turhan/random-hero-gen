@@ -1,5 +1,5 @@
 const paginate = (data) => {
-  const itemsPerPage = 50;
+  const itemsPerPage = 52;
   const numberOfPages = Math.ceil(data.length / itemsPerPage);
   const newData = Array.from({ length: numberOfPages }, (_, index) => {
     const start = index * itemsPerPage;
