@@ -9,6 +9,8 @@ import paginate from "../modules/paginate.js";
 import showPagesBtns from "../modules/showPageBtns.js";
 import showPages from "../modules/showPages.js";
 import pageBtnFunct from "../modules/pageBtnFunc.js";
+import get from "../modules/getElement.js";
+import "../modules/darkMode.js";
 
 // import "../modules/pageBtnFunc.js";
 
@@ -25,11 +27,6 @@ window.addEventListener("DOMContentLoaded", async () => {
   const data = await giveData();
   // paginate
   const pages = paginate(data);
-  // console.log(pages);
-  // showItems when loads
-  // showItems(data);
-  // showItems(paginate(data)[1]);
-  // showPages();
 
   // showPages
   showPages(pages, 0);

@@ -40,12 +40,30 @@ Variables
   --clr-grey-9: hsl(212, 33%, 89%);
   --clr-grey-10: hsl(210, 36%, 96%);
   --clr-white: #fff;
+  --clr-black: #000000;
   --ff-primary: "Lato", sans-serif;
   --transition: all 0.3s linear;
   --spacing: 0.1rem;
   --radius: 0.5rem;
   --light-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
   --dark-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.dark-mode {
+  /* darkest grey - used for headings */
+  --clr-grey-10: hsl(209, 61%, 16%);
+  --clr-grey-9: hsl(211, 39%, 23%);
+  --clr-grey-8: hsl(209, 34%, 30%);
+  --clr-grey-7: hsl(209, 28%, 39%);
+  /* grey used for paragraphs */
+  --clr-grey-6: hsl(210, 22%, 49%);
+  --clr-grey-5: hsl(209, 23%, 60%);
+  --clr-grey-4: hsl(211, 27%, 70%);
+  --clr-grey-3: hsl(210, 31%, 80%);
+  --clr-grey-2: hsl(212, 33%, 89%);
+  --clr-grey-1: hsl(210, 36%, 96%);
+  --clr-white: black;
+  --clr-black: #fff;
 }
 /*
 =============== 
@@ -199,6 +217,29 @@ Loading
 .hide-loading {
   display: none;
 }
+/*
+========
+Dark Mode
+========
+*/
+.dark-btn {
+  cursor: pointer;
+  position: absolute;
+  top: 3%;
+  right: 3%;
+  border: none;
+  color: var(--clr-white);
+  background-color: var(--clr-grey-1);
+  padding: 1rem 1.2rem;
+  font-size: 1.1rem;
+  font-weight: 700;
+  text-transform: capitalize;
+  transition: var(--transition);
+}
+.dark-btn:hover {
+  color: var(--clr-white);
+  background-color: var(--clr-grey-3);
+}
 
 /* 
 =========
@@ -220,6 +261,7 @@ Section
   padding: 0.5rem 1rem;
   border: none;
   background-color: var(--clr-white);
+  color: var(--clr-grey-1);
   font-size: 1.3rem;
   text-transform: capitalize;
   box-shadow: var(--dark-shadow);
@@ -269,10 +311,10 @@ Section
 .img-container {
   /* width: 25rem; */
   position: relative;
-  background-color: black;
+  background-color: var(--clr-black);
 }
 .card:hover .img {
-  opacity: 0.5;
+  opacity: 0.55;
 }
 .img {
   height: 25rem;
@@ -311,7 +353,7 @@ Section
   color: var(--clr-grey-2);
 }
 .text .result {
-  color: black;
+  color: var(--clr-black);
   font-weight: 700;
 }
 .info-grid {
@@ -356,7 +398,6 @@ Section
 }
 /* random card */
 .random-card {
-  /* width: 22rem; */
   margin: 0 auto;
 }
 
@@ -412,7 +453,7 @@ SINGLE ITEMS
   text-transform: capitalize;
 }
 .singles-info-text span {
-  color: black;
+  color: var(--clr-black);
   font-weight: 700;
 }
 .singles-btn {
@@ -474,6 +515,7 @@ Page Buttons
   font-size: 1.5rem;
   border-bottom: 0.1rem solid transparent;
   transition: var(--transition);
+  color: var(--clr-black);
 }
 .prev-btn:hover,
 .next-btn:hover {
@@ -491,5 +533,5 @@ Page Buttons
 }
 .page-btn:hover,
 .active-page-btn {
-  color: var(--clr-primary-2);
+  color: var(--clr-black);
 }

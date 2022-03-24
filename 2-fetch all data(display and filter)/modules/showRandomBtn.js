@@ -26,22 +26,7 @@ const showRandomBtn = (data) => {
     });
     const newPages = paginate(randomHero);
     showPages(newPages, 0);
-    // showItems(randomHero);
-    // showPagesBtns(newPages);
   });
-
-  // add class to random card
-  // const btns = document.querySelectorAll(".btn");
-  // btns.forEach((btn) => {
-  //   btn.addEventListener("click", (e) => {
-  //     const selected = e.currentTarget;
-  //     const card = get(".card");
-  //     console.log(selected);
-  //     if (selected.classList.contains("random-btn")) {
-  //       card.classList.add("random-card");
-  //     }
-  //   });
-  // });
 };
 
 export default showRandomBtn;
