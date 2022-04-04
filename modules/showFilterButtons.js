@@ -1,4 +1,4 @@
-import get from "./getElement.js";
+  import get from "./getElement.js";
 import showItems from "./showItems.js";
 import paginate from "./paginate.js";
 import showPages from "./showPages.js";

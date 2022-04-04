@@ -1,12 +1,33 @@
 import get from "./getElement.js";
 
-const darkBtn = get(".dark-btn");
+let darkMode = localStorage.getItem("darkMode");
 
-darkBtn.addEventListener("click", () => {
-  document.documentElement.classList.toggle("dark-mode");
-  if (document.documentElement.classList.contains("dark-mode")) {
-    darkBtn.textContent = "light";
+const darkToggleBtn = get(".dark-btn");
+
+// darkmode
+const enableDark = () => {
+  document.documentElement.classList.add("dark-mode");
+  darkToggleBtn.textContent = "light";
+  localStorage.setItem("darkMode", "enabled");
+};
+
+// lightmode
+const disableDark = () => {
+  document.documentElement.classList.remove("dark-mode");
+  darkToggleBtn.textContent = "dark";
+  localStorage.setItem("darkMode", null);
+};
+
+// enable dark mode in all pages
+if (darkMode === "enabled") {
+  enableDark();
+}
+// toggle dark mode
+darkToggleBtn.addEventListener("click", () => {
+  darkMode = localStorage.getItem("darkMode");
+  if (darkMode !== "enabled") {
+    enableDark();
   } else {
-    darkBtn.textContent = "dark";
+    disableDark();
   }
 });
